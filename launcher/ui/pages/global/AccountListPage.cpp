@@ -136,6 +136,7 @@ void AccountListPage::on_actionAddMicrosoft_triggered()
         if (m_accounts->count() == 1) {
             m_accounts->setDefaultAccount(account);
         }
+    }
 }
 
 

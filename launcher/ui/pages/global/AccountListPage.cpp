@@ -130,10 +130,12 @@ void AccountListPage::listChanged()
 
 void AccountListPage::on_actionAddMicrosoft_triggered()
 {
-    m_accounts->addAccount(account);
-    if (m_accounts->count() == 1) {
-        m_accounts->setDefaultAccount(account);
-    }
+    auto account = MSALoginDialog::newAccount(this);
+    if (account) {
+        m_accounts->addAccount(account);
+        if (m_accounts->count() == 1) {
+            m_accounts->setDefaultAccount(account);
+        }
 }
 
 
